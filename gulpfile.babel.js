@@ -14,14 +14,25 @@ import imagemin from'gulp-imagemin';  //图片压缩插件
 import htmlmin from 'gulp-htmlmin';    //html压缩插件
 
 const targetLessPath = "src/style/**/*.less";
+// const targetLessPath = "node_modules/bootstrap/less/carousel.less";
+
 const desCssPath = "dist/style";
-const delCssPath = "dist/style/**/*.less";
+const delCssPath = "dist/style/**/*.css";
 
 const targetImagesPath = "src/images/**/*.{png,jpg,jpeg,gif,ico}";
 const desImagesPath = "dist/images";
 const delImagesPath = "dist/images/**/*.{png,jpg,jpeg,gif,ico}";
 
 const targetJsPath = "src/js/**/*.js";
+/*const targetJsArr = [
+    "node_modules/jquery/dist/jquery.min.js",
+    "node_modules/bootstrap/dist/js/bootstrap.min.js",
+    "node_modules/bootstrap/js/transition.js",
+    "node_modules/bootstrap/js/carousel.js",
+    "node_modules/jquery.stellar/jquery.stellar.js",
+    targetJsPath
+];*/
+
 const desJsPath = "dist/js";
 const delJsPath = "dist/js/**/*.js";
 
@@ -41,7 +52,7 @@ gulp.task('scripts', ()=> {
         .pipe(babel({ //靠这个插件编译
             presets: ['es2015']
         }))
-        .pipe(concat('index.js')) //把js文件合并成app.js文件
+        // .pipe(concat('index.js')) //把js文件合并成app.js文件
         .pipe(uglify()) //压缩js文件  不能放前面
         .pipe(gulp.dest(desJsPath))   //把操作好的文件放到dist/js目录下
         .pipe(browsersync.stream());  //文件有更新自动执行
@@ -51,7 +62,7 @@ gulp.task('scripts', ()=> {
 gulp.task('style', ()=> {
     gulp.src(targetLessPath)
         .pipe(less())//编译less文件
-        .pipe(concat('index.css'))
+        // .pipe(concat('index.css'))
         .pipe(cssnano())                  //css压缩
         .pipe(gulp.dest(desCssPath))
         .pipe(browsersync.stream());
@@ -60,7 +71,7 @@ gulp.task('style', ()=> {
 //操作图片文件
 gulp.task('image', ()=> {
     gulp.src(targetImagesPath)
-        .pipe(imagemin())
+        // .pipe(imagemin())
         .pipe(gulp.dest(desImagesPath))
         .pipe(browsersync.stream());
 });

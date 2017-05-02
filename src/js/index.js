@@ -1,13 +1,18 @@
-$("#main").html("I love Javascript!");
+$(function () {
 
-const obj = {
-    a:1,
-    b:2,
-    c:3
-};
+        let winHeight = 0;
+        let winWidth = 0;
+        if (document.documentElement && document.documentElement.clientHeight && document.documentElement.clientWidth){
+                winHeight = document.documentElement.clientHeight;
+                winWidth = document.documentElement.clientWidth;
+                console.log("浏览器宽度->",winHeight);
+                console.log("浏览器高度->",winWidth);
+                if(winHeight >= 768){
+                    $.stellar();
+                }
+            }
 
-const { a , b,c } = obj;
-const arr = [1,2,3,4,5,6,7,8,9,11];
-console.log("copy arr ->",arr);
-
-
+        $('.carousel').carousel({
+            interval: 3000
+        });
+});

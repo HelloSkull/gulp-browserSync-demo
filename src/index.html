@@ -1,29 +1,182 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <meta name="keywords"
-          content="gulp-browsersync脚手架"/>
-    <title>gulp-browsersync脚手架</title>
-    <link rel="stylesheet" href="./style/index.css">
-</head>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <meta name="飞鼠贷,飞鼠贷官网首页"
+              content="飞鼠贷,飞鼠贷官网首页"/>
+        <title>飞鼠贷官网</title>
+        <link rel="stylesheet" href="./style/normalize.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./style/default.css">
+        <link rel="stylesheet" href="./style/common.css">
+        <link rel="stylesheet" href="./style/index.css">
+    </head>
 
-<body>
+    <body>
+        <div class="top-header" id="top-header">
+            <div class="top-bg"></div>
+            <div class="top-header-content">
+                <div class="container clear-float">
+                    <div class="pull-left">
+                        <img class="icon" src="./images/index/icon_feishu.png">
+                    </div>
+                    <div class="pull-right text-link-arr" id="text-link-arr">
+                        <a href="./index.html" id="index-btn" class="active">首页</a>
+                        <a href="./officialDynamics.html" id="official-dynamics" >官方动态</a>
+                        <a href="./aboutUs.html" id="about-us" >关于我们</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div id="carousel-bg" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-bg" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-bg" data-slide-to="1"></li>
+                    <li data-target="#carousel-bg" data-slide-to="2"></li>
+                </ol>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <div class="carousel-1"></div>
+                        <img src="./images/index/banner_header.png?rev=@@hash">
+                        <div class="carousel-caption">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="carousel-2"></div>
+                        <img src="./images/index/banner_carousel_2.jpg?rev=@@hash">
+                        <div class="carousel-caption">
+                        </div>
+                    </div>
 
-    <div id="content">
-        <span class="red">测试</span>
-        <div id="main"></div>
-        <img src="./images/bj_1.png?rev=@@hash" class="main"/>
-        <img src="./images/bj_2.png?rev=@@hash" class="main"/>
-    </div>
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-bg" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-bg" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            <div class="big-bg-1 opacity-5 active-bg" data-stellar-background-ratio="0.05"></div>
+            <div class="big-over-bg-1 container">
+                <div>
+                    <p class="title">飞速放款，借钱如此简单</p>
+                </div>
+                <div>
+                    <ul class="img-list clear-float">
+                        <li>
+                            <img src="./images/index/shiminrenzheng.png?rev=@@hash">
+                            <p>实名认证</p>
+                        </li>
+                        <li>
+                            <img src="./images/index/xinyongshenghe.png?rev=@@hash">
+                            <p>信用审核</p>
+                        </li>
+                        <li>
+                            <img src="./images/index/fangkuanchenggogn.png?rev=@@hash">
+                            <p>放款成功</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="big-bg-2 opacity-5 active-bg" data-stellar-background-ratio="0.05"></div>
+            <div class="big-over-bg-2"></div>
+            <div class="big-bg-3 opacity-5 active-bg" data-stellar-background-ratio="0.05"></div>
+            <div id="official-dynamics-content" class="official-dynamic-content container">
+                <p class="title">官方动态</p>
+                <p class="more">+更多</p>
+                <ul class="content">
+                    <li>
+                        <a href="./articleDetail.html">
+                            <span class="tip">【xx公告】</span>
+                            公告标题很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长
+                            很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很很长很长很长很长很很长很长很长很长很很长很长很长很长很
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./articleDetail.html">
+                            <span class="tip">【xx公告】</span>公告标题很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长
+                            很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很很长很长很长很长很很长很长很长很长很很长很长很长很长很
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./articleDetail.html">
+                            <span class="tip">【xx公告】</span>公告标题很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长
+                            很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很很长很长很长很长很很长很长很长很长很很长很长很长很长很
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./articleDetail.html">
+                            <span class="tip">【xx公告】</span>公告标题很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长
+                            很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很很长很长很长很长很很长很长很长很长很很长很长很长很长很
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer" id="footer">
+            <div class="content">
+                <ul class="container clear-float">
+                    <li class="text pull-left">
+                        官方客服&nbsp;:&nbsp;800-067-286<br>
+                        官方支付宝&nbsp;:&nbsp;上海佰晟通信息科技有限公司<br>
+                        官方客服支付宝账号&nbsp;:&nbsp;pay.channel@mo9.com<br>
+                    </li>
+                    <li class="img-QR pull-right">
+                    <li class="img-QR pull-right">
+                    <li class="img-QR pull-right">
+                    <li class="img-QR pull-right">
+                        <img class="img" src="./images/index/erweima.png">
+                    </li>
+                </ul>
+                <div class="copyright">
+                    <div class="text-1">
+                        <p>备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;案&nbsp;:&nbsp;沪12009377ICP经营许可证&nbsp;&nbsp;&nbsp;&nbsp;上海佰晟通信息科技有限公司版权所有&nbsp;&nbsp;&nbsp;&nbsp;2012-2017&nbsp;&nbsp;&nbsp;&nbsp;ICP</p>
+                        <p>公司名称&nbsp;:&nbsp;上海佰晟通信息科技有限公司&nbsp;&nbsp;&nbsp;&nbsp;室&nbsp;&nbsp;&nbsp;&nbsp;客服电话&nbsp;:&nbsp;021-33763320&nbsp;&nbsp;&nbsp;&nbsp;公司地址&nbsp;:&nbsp;上海市浦东新区耀华路488号2016A</p>
+                    </div>
+                    <div class="text-2 display-none">
+                        <p>沪12009377ICP经营许可证</p>
+                        <p>上海佰晟通信息科技有限公司版权所有2012-2016&nbsp;&nbsp;ICP</p>
+                        <p>公司名称&nbsp;:&nbsp;上海佰晟通信息科技有限公司&nbsp;室&nbsp;</p>
+                        <p>客服电话&nbsp;:&nbsp;021-33763320&nbsp;</p>
+                        <p>公司地址&nbsp;:&nbsp;上海市浦东新区耀华路488号2016A</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fix-bottom">
+            <ul class="container clear-float">
+                <li class="pull-left">
+                    <img class="img1" src="./images/index/banner_di.png">
+                </li>
+                <li class="pull-right QR-code-area">
+                    <div>
+                        <img class="img2" src="./images/index/mo9_weixin_server.png">
+                        <p class="text">关注企业服务号</p>
+                    </div>
+                    <div>
+                        <img class="img2" src="./images/index/erweima_hover.png">
+                        <p class="text">下载APP</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
 
 
-<script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js?rev=@@hash"></script>
-<script type="text/javascript" src="../node_modules/jquery.stellar/jquery.stellar.js?rev=@@hash"></script>
-<script type="text/javascript" src="./js/index.js?rev=@@hash"></script>
+        <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js?rev=@@hash"></script>
+        <script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.min.js?rev=@@hash"></script>
+        <script type="text/javascript" src="../node_modules/bootstrap/js/transition.js?rev=@@hash"></script>
+        <script type="text/javascript" src="../node_modules/bootstrap/js/carousel.js?rev=@@hash"></script>
+        <script type="text/javascript" src="../node_modules/jquery.stellar/jquery.stellar.js?rev=@@hash"></script>
+        <script type="text/javascript" src="./js/index.js?rev=@@hash"></script>
 
-</body>
+    </body>
 </html>
