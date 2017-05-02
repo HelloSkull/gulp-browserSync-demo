@@ -1,5 +1,4 @@
 $(function () {
-
         let winHeight = 0;
         let winWidth = 0;
         if (document.documentElement && document.documentElement.clientHeight && document.documentElement.clientWidth){

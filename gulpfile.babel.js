@@ -13,29 +13,39 @@ import less from 'gulp-less';             //less文件编译
 import imagemin from'gulp-imagemin';  //图片压缩插件
 import htmlmin from 'gulp-htmlmin';    //html压缩插件
 
-const targetLessPath = "src/style/**/*.less";
-// const targetLessPath = "node_modules/bootstrap/less/carousel.less";
+//css 和 less
+const targetLessArrPath = [
+    "src/less/**/*.less"
+];
+const targetCssArrPath = [
+    "node_modules/bootstrap/dist/css/bootstrap.min.css"
+];
+const desLessPath = "dist/less";
+const delCssPath = "dist/less/**/*.{css,less}";
 
-const desCssPath = "dist/style";
-const delCssPath = "dist/style/**/*.css";
 
-const targetImagesPath = "src/images/**/*.{png,jpg,jpeg,gif,ico}";
-const desImagesPath = "dist/images";
-const delImagesPath = "dist/images/**/*.{png,jpg,jpeg,gif,ico}";
+//Es6Js和Js
+const targetEs6ArrPath = [
+    "src/js/**/*.js"
+];
 
-const targetJsPath = "src/js/**/*.js";
-/*const targetJsArr = [
+const targetJsArr = [
     "node_modules/jquery/dist/jquery.min.js",
     "node_modules/bootstrap/dist/js/bootstrap.min.js",
     "node_modules/bootstrap/js/transition.js",
     "node_modules/bootstrap/js/carousel.js",
-    "node_modules/jquery.stellar/jquery.stellar.js",
-    targetJsPath
-];*/
+    "node_modules/jquery.stellar/jquery.stellar.js"
+];
 
 const desJsPath = "dist/js";
 const delJsPath = "dist/js/**/*.js";
 
+//图片
+const targetImagesPath = "src/images/**/*.{png,jpg,jpeg,gif,ico}";
+const desImagesPath = "dist/images";
+const delImagesPath = "dist/images/**/*.{png,jpg,jpeg,gif,ico}";
+
+//页面
 const targetHtmlPath = "src/**/*.html";
 const desHtmlPath = "dist";
 const delHtmlPath = "dist/**/*.html";
@@ -47,8 +57,20 @@ gulp.task('clean',(cb)=>{
 });
 
 //操作js文件
-gulp.task('scripts', ()=> {
-    gulp.src(targetJsPath)            //需要操作的源文件
+gulp.task('js', ()=> {
+    gulp.src(targetJsArr)            //需要操作的源文件
+        // .pipe(babel({ //靠这个插件编译
+        //     presets: ['es2015']
+        // }))
+        // .pipe(concat('index.js')) //把js文件合并成app.js文件
+        .pipe(uglify()) //压缩js文件  不能放前面
+        .pipe(gulp.dest(desJsPath))   //把操作好的文件放到dist/js目录下
+        .pipe(browsersync.stream());  //文件有更新自动执行
+});
+
+//操作Es6Js文件
+gulp.task('Es6Js', ()=> {
+    gulp.src(targetEs6ArrPath)            //需要操作的源文件
         .pipe(babel({ //靠这个插件编译
             presets: ['es2015']
         }))
@@ -58,13 +80,22 @@ gulp.task('scripts', ()=> {
         .pipe(browsersync.stream());  //文件有更新自动执行
 });
 
-//操作css文件
-gulp.task('style', ()=> {
-    gulp.src(targetLessPath)
+//操作less文件
+gulp.task('less', ()=> {
+    gulp.src(targetLessArrPath)
         .pipe(less())//编译less文件
         // .pipe(concat('index.css'))
         .pipe(cssnano())                  //css压缩
-        .pipe(gulp.dest(desCssPath))
+        .pipe(gulp.dest(desLessPath))
+        .pipe(browsersync.stream());
+});
+
+
+//操作css文件
+gulp.task('css', ()=> {
+    gulp.src(targetCssArrPath)
+        .pipe(cssnano())                  //css压缩
+        .pipe(gulp.dest(desLessPath))
         .pipe(browsersync.stream());
 });
 
@@ -83,7 +114,7 @@ gulp.task('html', ()=> {
         collapseBooleanAttributes: true,     //省略布尔属性的值
         removeEmptyAttributes: true,         //删除所有空格作为属性值
         removeScriptTypeAttributes: false,    //删除type=text/javascript
-        removeStyleLinkTypeAttributes: false, //删除type=text/css
+        removelessLinkTypeAttributes: false, //删除type=text/css
         minifyJS:false,                       //压缩页面js
         minifyCSS:false                       //压缩页面css
     };
@@ -95,7 +126,7 @@ gulp.task('html', ()=> {
 });
 
 gulp.task('serve', ['clean'], ()=> {
-    gulp.start('scripts','style','image','html');
+    gulp.start('Es6Js','js','less','image','html','css');
     browsersync.init({
         port: 8081,
         server: {
@@ -105,8 +136,8 @@ gulp.task('serve', ['clean'], ()=> {
             }
         }
     });
-    gulp.watch(targetJsPath, ['scripts']);     //监控文件变化，自动更新
-    gulp.watch(targetLessPath, ['style']);
+    gulp.watch(targetEs6ArrPath, ['Es6Js']);     //监控文件变化，自动更新
+    gulp.watch(targetLessArrPath, ['less']);
     gulp.watch(targetImagesPath, ['image']);
     gulp.watch(targetHtmlPath, ['html']);
 });
