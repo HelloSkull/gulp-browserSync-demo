@@ -1,0 +1,255 @@
+.top-header{
+  .top-bg{
+    width: 100%;
+    background: #000000;
+    opacity: 0.5;
+    z-index: 1;
+    position: fixed;
+
+    @media(min-width: 1200px){
+      height: 100px;
+    }
+    @media(min-width: 768px) and (max-width: 1199px ){
+      height: 70px;
+    }
+    @media(max-width: 767px){
+      height: 35px;
+    }
+  }
+
+  .top-header-content{
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    @media(min-width: 1200px){
+      height: 100px;
+    }
+    @media(min-width: 768px) and (max-width: 1199px ){
+      height: 70px;
+    }
+    @media(max-width: 767px){
+      height: 35px;
+    }
+    .icon{
+      @media(min-width: 1200px){
+        height: 95px;
+      }
+      @media(min-width: 768px) and (max-width: 1199px ){
+        height: 66px;
+      }
+      @media(max-width: 767px){
+        height: 35px;
+      }
+    }
+  }
+
+  .text-link-arr{
+    a{
+      &.active{
+        color: #ffffff;
+      }
+
+      display: inline-block;
+      color:#b7b7b7;
+
+      @media(min-width: 1200px){
+        font-size: 25.13px;
+        margin-top: 34px;
+        margin-right: 58px;
+      }
+      @media(min-width: 768px) and (max-width: 1199px ){
+        font-size: 18.13px;
+        margin-top: 24px;
+        margin-right: 50px;
+      }
+      @media(max-width: 767px){
+        font-size: 12px;
+        margin-top: 9px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+@media(min-width: 1200px){
+  .footer{
+    color: #FFFFFF;
+    .content{
+      height: 587px;
+      width: 100%;
+      background: rgb(37, 69, 116);
+      padding-top: 56px;
+      ul.container{
+        font-size: 18px;
+        line-height: 35px;
+        margin-bottom: 30px;
+        li.text{
+          padding-top: 47px;
+        }
+        li.img-QR{
+          padding-right: 4.5%;
+        }
+      }
+      .copyright{
+        text-align: center;
+        font-size: 15px;
+        line-height: 35px;
+      }
+    }
+  }
+}
+
+@media(min-width: 768px) and (max-width: 1199px ){
+  .footer{
+    color: #FFFFFF;
+    .content{
+      height: 400px;
+      width: 100%;
+      background: #254574;
+      padding-top: 30px;
+      ul.container{
+        font-size: 16px;
+        line-height: 28px;
+        margin-bottom: 25px;
+        li.text{
+          padding-top: 20px;
+        }
+        li.img-QR{
+          padding-right: 4.5%;
+          .img{
+            width: 100px;
+          }
+        }
+      }
+      .copyright{
+        text-align: center;
+        font-size: 15px;
+        line-height: 20px;
+      }
+    }
+  }
+}
+
+@media(max-width: 767px){
+  .footer{
+    color: #FFFFFF;
+    .content{
+      height: 220px;
+      width: 100%;
+      background: #254574;
+      padding-top: 12px;
+      ul.container{
+        font-size: 10px;
+        line-height: 14px;
+        margin-bottom: 5px;
+        li.text{
+          padding-top: 10px;
+        }
+        li.img-QR{
+          padding-right: 4.5%;
+          .img{
+            width: 55px;
+          }
+        }
+      }
+      .copyright{
+        text-align: center;
+        font-size: 10px;
+        line-height: 10px;
+        .text-1{
+          display: none;
+        }
+        .text-2{
+          display: block;
+          p{
+            margin: 2px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.fix-bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  background: rgb(12, 19, 35);
+  color: #FFFFFF;
+
+  @media (min-width: 1200px) {
+    li.QR-code-area {
+      padding-top: 20px;
+      > div {
+        padding-right: 50px;
+        float: right;
+        text-align: center;
+      }
+      .img2 {
+        width: 122px;
+      }
+      p.text {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1199px ) {
+    li.QR-code-area {
+      padding-top: 20px;
+      > div {
+        padding-right: 30px;
+        float: right;
+        text-align: center;
+      }
+      .img2 {
+        width: 100px;
+      }
+      p.text {
+        margin-top: 6px;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    li.QR-code-area {
+      padding-top: 5px;
+      > div {
+        padding-right: 0;
+        float: right;
+        text-align: center;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+      .img2 {
+        width: 55px;
+      }
+      p.text {
+        margin-top: 3px;
+        font-size: 10px;
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    height: 200px;
+    .img1 {
+      width: 490px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1199px ) {
+    height: 150px;
+    .img1 {
+      width: 360px;
+    }
+
+  }
+  @media (max-width: 767px) {
+    height: 80px;
+    .img1 {
+      width: 180px;
+    }
+  }
+}
